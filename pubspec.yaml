@@ -1,6 +1,6 @@
 name: flutter_file_reader
 description: 本地文件视图，支持多种文件类型，Android由Tencent X5实现，iOS由WKWebView实现
-version: 0.0.1
+version: 0.0.2
 author: LiWeNHuI <sdgrlwh@163.com>
 homepage: https://github.com/LiWenHui96/flutter_file_reader
 

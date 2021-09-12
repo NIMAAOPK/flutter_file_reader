@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_file_reader'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = '本地文件视图，支持多种文件类型，Android由Tencent X5实现，iOS由WKWebView实现'
   s.description      = <<-DESC
 本地文件视图，支持多种文件类型，Android由Tencent X5实现，iOS由WKWebView实现
