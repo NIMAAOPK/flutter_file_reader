@@ -20,8 +20,8 @@ Make sure you add the following key to `Info.plist` for iOS
 ```
 ### Android
 1. The X5 kernel loading method has been integrated in the plugin
-2. Get the current kernel loading status through `getx5status()`
-3. It can be initialized by itself through `initx5()`. It is mainly used to solve the problem of unsuccessful download
+2. Get the current kernel loading status through `getX5Status()`
+3. It can be initialized by itself through `initX5()`. It is mainly used to solve the problem of unsuccessful download
 4. Android P Unable to download kernel Solution
 
 Add a code in label `application` on File `AndroidManifst.xml`
