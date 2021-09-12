@@ -4,7 +4,7 @@
 >
 > Supports Android and iOS
 
-Language: English | [中文](README_ZH.md)
+Language: English | [中文](README-ZH.md)
 
 #### Android is implemented by [Tencent X5](https://x5.tencent.com/docs/index.html), iOS is implemented by [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview).
 
