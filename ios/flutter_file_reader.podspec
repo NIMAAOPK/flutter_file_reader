@@ -14,9 +14,8 @@ Pod::Spec.new do |s|
   s.author           = { 'LiWeNHuI' => 'sdgrlwh@163.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
-  s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.platform = :ios, '8.0'
+  s.platform = :ios, '9.0'
   s.ios.deployment_target = '10.0'
 
   s.swift_version = '5.0'
