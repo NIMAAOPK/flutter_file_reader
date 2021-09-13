@@ -3,22 +3,23 @@ import WebKit
 
 class FileReaderView: NSObject,FlutterPlatformView {
 
-  var _webView: FileReaderWKWebView?
+  var _webView: WKWebView?
   
   let supportFileType = ["docx","doc","xlsx","xls","pptx","ppt","pdf","txt","jpg","jpeg","png"]
 
-  init(withFrame frame: CGRect, viewIdentifier viewId: Int64, arguments args: Any?,binaryMessenger messenger: FlutterBinaryMessenger) {
+  init(withFrame frame: CGRect, viewIdentifier viewId: Int64, arguments args: Any?, binaryMessenger messenger: FlutterBinaryMessenger) {
     super.init()
     
     let args = args as! [String: String]
     let filePath = args["filePath"] as! String
+    let fileName = args["fileName"] as! String
     let fileType = args["fileType"] as! String
     
     let channel = FlutterMethodChannel(name: channelName + "_\(viewId)", binaryMessenger: messenger)
     
     channel.setMethodCallHandler { (call, result) in
       if call.method == "openFile" {
-        if self.isSupportOpen(fileType: fileType){
+        if self.isSupportOpen(fileType: fileType) {
           self.openFile(filePath: filePath)
           
           result(true)
@@ -29,10 +30,10 @@ class FileReaderView: NSObject,FlutterPlatformView {
       }
     }
     
-    self._webView = FileReaderWKWebView.init(frame: frame)
+    self._webView = WKWebView.init(frame: frame)
   }
   
-  func openFile(filePath:String)  {
+  func openFile(filePath: String)  {
     let url = URL.init(fileURLWithPath: filePath)
     
     if #available(iOS 9.0, *) {
@@ -43,7 +44,7 @@ class FileReaderView: NSObject,FlutterPlatformView {
     }
   }
 
-  func isSupportOpen(fileType:String) -> Bool {
+  func isSupportOpen(fileType: String) -> Bool {
     if supportFileType.contains(fileType.lowercased()) {
       return true
     }

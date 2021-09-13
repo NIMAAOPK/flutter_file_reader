@@ -35,6 +35,7 @@ public class FileReaderView implements PlatformView, MethodCallHandler, TbsReade
   private final String tempPrefixPath;
 
   private String filePath = "";
+  private String fileName = "";
   private String fileType = "";
 
   FileReaderView(Context context, int viewId, Map<String, Object> args, BinaryMessenger messenger) {
@@ -44,6 +45,10 @@ public class FileReaderView implements PlatformView, MethodCallHandler, TbsReade
 
     if (args.containsKey("filePath")) {
       filePath = (String) args.get("filePath");
+    }
+
+    if (args.containsKey("fileName")) {
+      fileName = (String) args.get("fileName");
     }
 
     if (args.containsKey("fileType")) {

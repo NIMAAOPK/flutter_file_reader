@@ -1,9 +1,9 @@
 import UIKit
 
-class FileReaderFactory: NSObject,FlutterPlatformViewFactory {
-  var _messenger : FlutterBinaryMessenger?
+class FileReaderFactory: NSObject, FlutterPlatformViewFactory {
+  var _messenger: FlutterBinaryMessenger?
   
-  init(messenger : FlutterBinaryMessenger) {
+  init(messenger: FlutterBinaryMessenger) {
     super.init()
     
     self._messenger = messenger

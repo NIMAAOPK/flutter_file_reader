@@ -157,6 +157,7 @@ class _FileReaderViewState extends State<FileReaderView> {
       onPlatformViewCreated: _onPlatformViewCreated,
       creationParams: {
         'filePath': widget.filePath,
+        'fileName': fileName,
         'fileType': fileType,
       },
       creationParamsCodec: const StandardMessageCodec(),
@@ -172,6 +173,7 @@ class _FileReaderViewState extends State<FileReaderView> {
       onPlatformViewCreated: _onPlatformViewCreated,
       creationParams: {
         'filePath': widget.filePath,
+        'fileName': fileName,
         'fileType': fileType,
       },
       creationParamsCodec: const StandardMessageCodec(),
@@ -192,6 +194,30 @@ class _FileReaderViewState extends State<FileReaderView> {
   ///
   Future<bool> isExistsFile() async {
     return await File(widget.filePath).exists();
+  }
+
+  ///
+  /// File name describe
+  ///
+  String get fileName {
+    String path = widget.filePath;
+
+    if (path.isEmpty) {
+      return '';
+    }
+
+    int i = path.lastIndexOf('/');
+    if (i <= -1) {
+      return '';
+    }
+    String fileName = path.substring(i + 1);
+
+    int j = fileName.lastIndexOf('.');
+    if (j <= -1) {
+      return '';
+    }
+
+    return fileName.substring(j + 1);
   }
 
   ///
