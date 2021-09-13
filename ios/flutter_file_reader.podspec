@@ -17,6 +17,8 @@ Pod::Spec.new do |s|
   s.dependency 'Flutter'
   s.platform = :ios, '9.0'
   s.ios.deployment_target = '10.0'
+  # 引入系统 framework
+  # s.frameworks = 'QuickLook'
 
   s.swift_version = '5.0'
 end
